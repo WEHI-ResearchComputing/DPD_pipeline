@@ -1,0 +1,14 @@
+#ignore logs folder as that will be created in the code and is personal
+logs/
+
+#ignore other folders
+__pycache__/
+enaBrowserTools-0.0.3/
+aspera_tests/
+script_tests/
+
+#ignore aspera files and csv files
+aspera_dsa.openssh
+aspera_dsa.openssh.pub
+*.csv
+*.out
