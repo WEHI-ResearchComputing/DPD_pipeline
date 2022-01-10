@@ -13,4 +13,9 @@ jocelyn_scripts/
 aspera_dsa.openssh
 aspera_dsa.openssh.pub
 *.csv
+!test.csv
 *.out
+*.sh
+!pipielineScript.sh
+*.bat
+
