@@ -6,6 +6,8 @@ __pycache__/
 enaBrowserTools-0.0.3/
 aspera_tests/
 script_tests/
+jocelyn_scripts/
+
 
 #ignore aspera files and csv files
 aspera_dsa.openssh
