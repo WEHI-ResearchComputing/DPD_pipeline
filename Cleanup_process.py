@@ -18,17 +18,20 @@ def changeURLState(url, state):
     print(f'PRINTING url: {url} and state: {state}')
     
     count = 0
-    
-    # print(dfCodesStates)
+    print(count)
+    print(dfCodesStates)
         
     for code in dfCodesStates.iloc[:,0]:
         # print(f'{code} {url}')
         if code == url:
-            # print('match')
-            dfCodesStates.at[count, 1] = state
+            print('match')
+#             print(count)
+#             suss = dfCodesStates.at[count, 1]
+#             print(f'printing this to see {suss}')
+            dfCodesStates.iloc[count, 1] = state
         count += 1
 
-    # print(dfCodesStates)
+    print(dfCodesStates)
 
     with open ('ERRs_and_codes.csv', 'w+') as states:
         dfCodesStates.to_csv(states, index=False)
