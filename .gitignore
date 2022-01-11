@@ -16,7 +16,9 @@ aspera_dsa.openssh.pub
 !test.csv
 *.out
 *.sh
-!pipielineScript.sh
+!pipelineScript.sh
 !cleanup_job.sh
 *.bat
 
+broken_workflow.py
+helloWorld.py
