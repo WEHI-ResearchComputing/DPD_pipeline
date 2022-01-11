@@ -22,3 +22,6 @@ aspera_dsa.openssh.pub
 
 broken_workflow.py
 helloWorld.py
+
+*.ipynb
+*.ipynb_checkpoints
