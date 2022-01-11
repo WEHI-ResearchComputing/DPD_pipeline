@@ -17,5 +17,6 @@ aspera_dsa.openssh.pub
 *.out
 *.sh
 !pipielineScript.sh
+!cleanup_job.sh
 *.bat
 
