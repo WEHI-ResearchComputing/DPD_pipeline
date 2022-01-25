@@ -59,6 +59,7 @@ requires n>2 threads for the resumability to work with threading
 change the **absolute address** of the csv containing accession codes, the name of the column containing the accession codes, location for the samples to be downloaded to, location of the enaDatGet program, location for the workflow output and the number of threads.
 
 ## Running
+In SLURM run the following command
 ```
 sbatch pipelineScript.sh
 ```
