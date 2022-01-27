@@ -60,9 +60,8 @@ change the **absolute address** of the csv containing accession codes, the name 
 
 ## Script
 The code is configured so that when the user runs the pipeline with a script workflow, the code runs the script and send the location of the working sample to it and the code of the sample itself. Therefore, the users script must be able to take the location of the file and work with that. Example location and sample
-```
+
 /stornext/HPCScratch/home/bollands.c/Malaria_downloads/ERR12345/ERR12345(.fastq/whatever file type you have requested to download, your script must specify this)
-```
 
 
 ## Running
