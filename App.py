@@ -35,9 +35,9 @@ output_path = config['outputs']['ERR_output_path']
 logs = config['outputs']['log_outputs']
 download_path = config['DownloadLocation']['download_path']
 script = config['workflow']['script']
-print(f'SCRIPT TYPE {type(script)}')
+# print(f'SCRIPT TYPE {type(script)}')
 #script = script.encode(encoding='utf-8')
-print(f'SCRIPT TYPE {type(script)}')
+# print(f'SCRIPT TYPE {type(script)}')
 numThreads = config['threads']['thread_num']
 numThreads = int(numThreads)
 #print(f'NUM OF THREADS{numThreads}')
@@ -98,11 +98,11 @@ def process_queue():
             # process = f'python C:/Users/Chris/Downloads/enaBrowserTools-0.0.3/enaBrowserTools-0.0.3/python3/enaDataGet.py {url}'
 
            
-            print(f'downloading {url}')
+            # print(f'downloading {url}')
             changeURLState(url, 1)
             if (download_then_check(url, address, download_path, logs, file_type, md5_column, ERRlist, column_name)):
                 changeURLState(url, 2)
-                print(f'sending {url} to workflow')
+                # print(f'sending {url} to workflow')
                 script_workflow(url, download_path, logs, script)
                     # changeURLState(url, 3)
                     # print(f'cleaning up {url}')
@@ -144,7 +144,7 @@ def process_resume():
                             changeURLState(url, 2)
                             if(script_workflow(dfCodesStates.iloc[row, 0], download_path, logs, script)):
                                 changeURLState(url, 3)
-                                print(f'cleaning up {url}')
+                                # print(f'cleaning up {url}')
                                 changeURLState(url, 4)
                                 if (clean(url, download_path, logs)):
                                     changeURLState(url, 5)
@@ -152,7 +152,7 @@ def process_resume():
                         # print('state is 2')
                         if(script_workflow(dfCodesStates.iloc[row, 0], download_path, logs, script)):
                             changeURLState(url, 3)
-                            print(f'cleaning up {url}')
+                            # print(f'cleaning up {url}')
                             changeURLState(url, 4)
                             if (clean(url, download_path, logs)):
                                 changeURLState(url, 5)

@@ -15,7 +15,7 @@ def changeURLState(url, state):
     with open ('ERRs_and_codes.csv', 'r') as states:
         dfCodesStates = pd.read_csv('ERRs_and_codes.csv')
         # print('written states to csv')
-    print(f'PRINTING url: {url} and state: {state}')
+    # print(f'PRINTING url: {url} and state: {state}')
     
     count = 0
     print(count)

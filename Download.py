@@ -18,7 +18,7 @@ def get_crambam(url, download_path):
         # print('can find bam')
         return result[0]
     else: 
-        print('cant find')
+        # print('cant find')
         write_to_unavil(logs, f'{url} is not in bam or cram format')
         return False
 
@@ -27,7 +27,7 @@ def get_fastq(url, download_path, logs):
     # print(glob.glob(f'{download_path}/{url}/*.fastq.*'))
     if(glob.glob(f'{download_path}/{url}/*.fastq.*')):
         result = glob.glob(f'{download_path}/{url}/*.fastq.*')
-        print(result)
+        # print(result)
         # print('can find cram')
         return result[0]
     else: 
@@ -45,7 +45,7 @@ def check_exists(url, download_path):
             print(f'{url} dir exists True')
             return(True)
     except:
-        print(f'{url}exists false')
+        print(f'{url} exists false')
         return(False)
         
 def check_exists_fastq(url, download_path, logs):
@@ -53,7 +53,7 @@ def check_exists_fastq(url, download_path, logs):
     try:
         #trying to find a file with the .cram or .bam extension
         result = get_fastq(url, download_path, logs)
-        print(result)
+        # print(result)
         if (os.path.exists(result)):
             print(f'{url} dir exists True')
             return(True)
@@ -106,10 +106,10 @@ def get_xml_md5(fname):
 
 def compare(file, xml):
     if file == xml:
-        print(f'{file}good')
+        print(f'{file} valid')
         return True
     else:
-        print(f'{file}corrupt')
+        print(f'{file} corrupt')
         return False
 
 #if one is corrupt then it returns false since both are needed to align
@@ -122,22 +122,22 @@ def check_fastq_md5(url, download_path, md5_column, ERRlist, code_column_name, l
         print(md51)
         print(md52)
         # with gzip.open(f'{download_path}/{url}/{url}_1.fastq.gz') as f: 
-        print('opened 1')
+        # print('opened 1')
         f_md5 = gzip_md5(f'{download_path}/{url}/{url}_1.fastq.gz')
         if (compare(f_md5, md51)):
-            print('file and csv md5 the same')
+            print('file 1 and csv md5 the same')
             write_to_success(logs, f'{url}_1 successfully downloaded and md5 checked\n')
             one = True 
-        else: print('file and csv md5 NOT the same')
+        else: print('file 2 and csv md5 NOT the same')
         # with gzip.open(f'{download_path}/{url}/{url}_2.fastq.gz') as f:
         print('opened 2')
         f_md5 = gzip_md5(f'{download_path}/{url}/{url}_2.fastq.gz')
         if (compare(f_md5, md52)):
             write_to_success(logs, f'{url}_2 successfully downloaded and md5 checked\n')
             two = True 
-        else: print('file and csv md5 NOT the same')
+        else: print('file 2 and csv md5 NOT the same')
         return one and two
-    else: print('file doesnt appear to exist')
+    else: print('file 2 doesnt appear to exist')
 
 #change 
 def check_cram_md5(url, download_path, logs):

@@ -23,7 +23,7 @@ def script_workflow(url, download_path, logs, script):
     # shell = True, input=path, universal_newlines=True,capture_output=True, encoding='utf-8'
     #process.stdin.write(f'{url}')
     print(f'STDOUT: {process.stdout}. STERR: {process.stderr}')
-    print('THIS IS AFTER RUNNING DA SCRIPT')
+    # print('THIS IS AFTER RUNNING DA SCRIPT')
     if process.returncode == 0:
     #     print(has)
     # if (process.stderr == b''):
@@ -48,7 +48,7 @@ def file_workflow(url, output_location, logs):
                     return True
             except Exception as e:
                 print(e)
-                print(f'{url}Could not create directory')
+                print(f'{url} Could not create directory')
                 return False
             except:
                 return False
