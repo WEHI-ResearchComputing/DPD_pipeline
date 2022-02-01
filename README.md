@@ -2,7 +2,7 @@
 More user testing is required now
 
 # Malaria CNV Pipeline
-This github contains code for a pipeline to assist with the downloading, processing and removal of bulk samples from ENA. This program takes input from a CSV (comma separated file) and a config.ini file. The CSV is to contain the sample codes and the config is to contain the processing information, more information below.
+This github contains code for a pipeline to assist with the downloading, processing and removal of bulk samples from ENA. This program takes input from a CSV (comma separated file) and a config.ini file. The CSV is to contain the sample codes and the config is to contain the processing information, more information below. The program will download the files given, check them against the md5s to make sure they are not corrupt. The program with then send them to the script that the user provides for processing. This will create another 2 slurm jobs, one that runs the script provided and one that waits for the 
 
 ### Contains
 App.py - controls the threading and the ENA accession codes to be downloaded and processed
@@ -33,26 +33,26 @@ Edit config.ini through a text editor or on demand, example:
 
 ```
 [ERRcodes]
-list_location = test.csv
-column_name = run_accession
-md5_column = fastq_md5
+list_location=test.csv
+column_name=run_accession
+md5_column=fastq_md5
 
 [DownloadLocation]
 download_path=/home/users/allstaff/bollands.c/scratch/bollands.c/Malaria_downloads
 
 [ENAdataget]
-enadataget_path = /home/users/allstaff/bollands.c/scratch/bollands.c/Malaria_downloads/enaBrowserTools-0.0.3/enaBrowserTools-0.0.3/python3/enaDataGet.py
-file_type = fastq
+enadataget_path=/home/users/allstaff/bollands.c/scratch/bollands.c/Malaria_downloads/enaBrowserTools-0.0.3/enaBrowserTools-0.0.3/python3/enaDataGet.py
+file_type=fastq
 
 [outputs]
-ERR_output_path = /vast/scratch/users/bollands.c/ERR_outputs
-log_outputs = ./logs
+ERR_output_path=/vast/scratch/users/bollands.c/ERR_outputs
+log_outputs=./logs
 
 [threads]
-thread_num = 3
+thread_num=3
 
 [workflow]
-script = /stornext/HPCScratch/home/bollands.c/Malaria_downloads/jocelyn_scripts/fastq2bamVivax.sh
+script=/stornext/HPCScratch/home/bollands.c/Malaria_downloads/jocelyn_scripts/fastq2bamVivax.sh
 ```
 requires n>2 threads for the resumability to work with threading
 
