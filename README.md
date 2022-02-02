@@ -4,6 +4,9 @@ More user testing is required now
 # Malaria CNV Pipeline
 This github contains code for a pipeline to assist with the downloading, processing and removal of bulk samples from ENA. This program takes input from a CSV (comma separated file) and a config.ini file. The CSV is to contain the sample codes and the config is to contain the processing information, more information below. The program will download the files given, check them against the md5s to make sure they are not corrupt. The program with then send them to the script that the user provides for processing. This will create another 2 slurm jobs, one that runs the script provided and one that waits for the processing script to be completed which then runs the cleanup_process.py. This removes the downloaded files to save space on the system.
 
+<img width="1016" alt="Screen Shot 2022-02-02 at 12 47 34 pm" src="https://user-images.githubusercontent.com/13778200/152080762-09d9ce3f-a711-447c-bead-c9304c6d58d5.png">
+
+
 ### Contains
 App.py - controls the threading and the ENA accession codes to be downloaded and processed
 
