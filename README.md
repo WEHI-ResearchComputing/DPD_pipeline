@@ -59,7 +59,9 @@ script=/stornext/HPCScratch/home/bollands.c/Malaria_downloads/jocelyn_scripts/fa
 ```
 requires n>2 threads for the resumability to work with threading
 
-change the **absolute address** of the csv containing accession codes, the name of the column containing the accession codes, location for the samples to be downloaded to, location of the enaDatGet program, location for the workflow output and the number of threads.
+
+change the **absolute address** of all the different config file targets
+
 
 ## ERR list file
 This is the file that contains the accession codes of all the samples that you wish to download. To maintain accuracy, the program uses the md5 checksum of the file to determine if the file is corrupt or not. This requires the user to supply the known md5 checksum for a reference. Using ERR codes, this can be found by following this link and following the instructions - https://ena-docs.readthedocs.io/en/latest/retrieval/programmatic-access/file-reports.html. This will generate a list of the codes and the md5s for the given project.
