@@ -290,6 +290,6 @@ def main():
 
     # #print(urls)
     start_threads()
-    print('program done')
+    print('Pipeline finished - check output files for detailed look as to the success of each sample')
 
 main()
