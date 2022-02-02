@@ -71,7 +71,7 @@ class MyThread(threading.Thread):
 # waiting downloading downloaded processed to remove  finished
 def changeURLState(url, state):
     
-    print(f'PRINTING url: {url} and state: {state}')
+    # print(f'PRINTING url: {url} and state: {state}')
     
     count = 0
     
@@ -112,7 +112,7 @@ def process_queue():
                     #write_in_process(to_download, to_process, to_delete)
 
         except queue.Empty:
-            print('q empty')
+            # print('q empty')
             return
 
 # setting up variables
@@ -166,9 +166,9 @@ def process_resume():
                         if (clean(url, download_path, logs)):
                             changeURLState(url, 5)
                     if (dfCodesStates.iloc[row, 1] == 5):
-                        print('state is 5, code has been processed, nothing to do')
+                        print(f'{url}s state is 5, code has been processed, nothing to do')
         except queue.Empty:
-            print('q empty')
+            # print('q empty')
             return
 
 #Key for code state

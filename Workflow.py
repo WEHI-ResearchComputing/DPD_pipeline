@@ -22,7 +22,7 @@ def script_workflow(url, download_path, logs, script):
     on_success = subprocess.run(["sbatch", f"--dependency=afterok:{process_id}", "cleanup_job.sh", url, download_path, logs])
     # shell = True, input=path, universal_newlines=True,capture_output=True, encoding='utf-8'
     #process.stdin.write(f'{url}')
-    print(f'STDOUT: {process.stdout}. STERR: {process.stderr}')
+    print(f'{url}: STDOUT: {process.stdout}. STERR: {process.stderr}')
     # print('THIS IS AFTER RUNNING DA SCRIPT')
     if process.returncode == 0:
     #     print(has)
