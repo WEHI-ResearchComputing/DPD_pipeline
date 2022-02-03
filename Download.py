@@ -123,15 +123,15 @@ def check_fastq_md5(url, download_path, md5_column, ERRlist, code_column_name, l
         # print(md52)
         # with gzip.open(f'{download_path}/{url}/{url}_1.fastq.gz') as f: 
         # print('opened 1')
-        f_md5 = gzip_md5(f'{download_path}/{url}/{url}_1.fastq.gz')
+        f_md5 = md5(f'{download_path}/{url}/{url}_1.fastq.gz')
         if (compare(f_md5, md51)):
             print(f'{url} file 1 and csv md5 the same')
             write_to_success(logs, f'{url}_1 successfully downloaded and md5 checked\n')
             one = True 
-        else: print('{url} file 2 and csv md5 NOT the same')
+        else: print(f'{url} file 1 and csv md5 NOT the same')
         # with gzip.open(f'{download_path}/{url}/{url}_2.fastq.gz') as f:
         # print('opened 2')
-        f_md5 = gzip_md5(f'{download_path}/{url}/{url}_2.fastq.gz')
+        f_md5 = md5(f'{download_path}/{url}/{url}_2.fastq.gz')
         if (compare(f_md5, md52)):
             write_to_success(logs, f'{url}_2 successfully downloaded and md5 checked\n')
             two = True 
