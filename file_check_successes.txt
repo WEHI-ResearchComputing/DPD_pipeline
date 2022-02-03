@@ -1,2 +1,0 @@
-ERR1475422_1 successfully downloaded and md5 checked
-ERR1475422_2 successfully downloaded and md5 checked
