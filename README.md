@@ -71,7 +71,13 @@ The code is configured so that when the user runs the pipeline with a script wor
 
 /stornext/HPCScratch/home/bollands.c/Malaria_downloads/ERR12345/ERR12345(.fastq/whatever file type you have requested to download, your script must specify this)
 
+Adding for example
+```
+f1=${1}'_1.fastq.gz'
+```
+into your sh script means its taking in the first argument that you are passing to the code. It is possible to add as many as you want but you cannot use {0} as that references the script itself.
 
+Combining the example location and variable example 
 ## Running
 In SLURM run the following command
 ```
