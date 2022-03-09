@@ -19,7 +19,7 @@ def script_workflow(url, download_path, logs, script):
     process_id = process.stdout
     process_id = process_id.decode('ascii')
     process_id = process_id.rstrip('\n')
-    on_success = subprocess.run(["sbatch", f"--dependency=afterok:{process_id}", "cleanup_job.sh", url, download_path, logs])
+    on_success = subprocess.run(["sbatch", f"--dependency=afterok:{process_id}", "cleanup_job.sh", f'{url}', f"{download_path}", f"{logs}"])
     # shell = True, input=path, universal_newlines=True,capture_output=True, encoding='utf-8'
     #process.stdin.write(f'{url}')
     print(f'{url}: STDOUT: {process.stdout}. STERR: {process.stderr}')
