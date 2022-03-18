@@ -18,6 +18,7 @@ aspera_dsa.openssh.pub
 *.sh
 !pipelineScript.sh
 !cleanup_job.sh
+!scripts_script.sh
 *.bat
 
 broken_workflow.py
