@@ -78,6 +78,10 @@ f1=${1}'_1.fastq.gz'
 into your sh script means its taking in the first argument that you are passing to the code. It is possible to add as many as you want but you cannot use {0} as that references the script itself.
 
 Combining the example location and variable example gives the entire path and name of the file that has just been downloaded and can now be processes with your script.
+
+SCRIPTS_SCRIPT
+This file is a sh script where you place all the scripts that you want to run on the files in order. This way you can have whatever workflow you want because sh files execute each command in order but wait for the one above to finish first.
+
 ## Running
 In SLURM run the following command
 ```
