@@ -67,7 +67,7 @@ change the **absolute address** of all the different config file targets
 This is the file that contains the accession codes of all the samples that you wish to download. To maintain accuracy, the program uses the md5 checksum of the file to determine if the file is corrupt or not. This requires the user to supply the known md5 checksum for a reference. Using ERR codes, this can be found by following this link and following the instructions - https://ena-docs.readthedocs.io/en/latest/retrieval/programmatic-access/file-reports.html. This will generate a list of the codes and the md5s for the given project.
 
 ## Script
-The code is configured so that when the user runs the pipeline with a script workflow, the code runs the script and send the location of the working sample to it and the code of the sample itself. Therefore, the users script must be able to take the location of the file and work with that. Example location and sample
+The code is configured so that when the user runs the pipeline with a script workflow, the code runs the script and sends the location of the working sample to it and the accession code of the sample itself. Therefore, the users script must be able to take the location of the file and work with that. Example location and sample
 
 /stornext/HPCScratch/home/bollands.c/Malaria_downloads/ERR12345/ERR12345(.fastq/whatever file type you have requested to download, your script must specify this)
 
@@ -78,6 +78,8 @@ f1=${1}'_1.fastq.gz'
 into your sh script means its taking in the first argument that you are passing to the code. It is possible to add as many as you want but you cannot use {0} as that references the script itself.
 
 Combining the example location and variable example gives the entire path and name of the file that has just been downloaded and can now be processed with your script.
+
+If there are multiple steps to your workflow please configure a script to be called that can handle that as the workflow calls one script only.
 
 ## Running
 In SLURM run the following command
