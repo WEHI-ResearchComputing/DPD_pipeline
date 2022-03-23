@@ -15,7 +15,11 @@ def script_workflow(url, download_path, logs, script):
     success_file = open(f'{logs}/workflow_success.txt', 'a')
     # print(f'attempting to run {url}, script: {script}')
     path = f'{download_path}/{url}/{url}'
+<<<<<<< HEAD
     process = subprocess.run(["sbatch","scripts_script.sh", f'{path}'], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+=======
+    process = subprocess.run(["sbatch", "scripts_script.sh", f'{path}'], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+>>>>>>> 1497b1fab4fbda2a50560565822ef02fdfb9d1da
     process_id = process.stdout
     process_id = process_id.decode('ascii')
     process_id = process_id.rstrip('\n')
